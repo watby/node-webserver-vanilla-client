@@ -1,0 +1,49 @@
+* {
+  box-sizing: border-box;
+}
+
+h1 {
+  text-align: center;
+}
+
+body {
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.container {
+  width: 400px;
+  margin: 0 auto;
+}
+
+form {
+  border: 1px solid gainsboro;
+  padding: 10px;
+  border-radius: 3px;
+}
+
+form div {
+  margin-top: 10px;
+}
+
+form label {
+  display: block;
+}
+
+form .error {
+  color: red;
+}
+
+form .message {
+  display: block;
+  height: 80px;
+}
+
+form .hidden {
+  display: none;
+}
+
+form textarea,
+form input,
+form select {
+  width: 100%;
+}

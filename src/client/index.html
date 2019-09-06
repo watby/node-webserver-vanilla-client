@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1 data-title-for="register-form">Register</h1>
+      <form novalidate class="register-form">
+        <div>Your email</div>
+        <input name="email" type="email" />
+        <span
+          class="error hidden"
+          data-validation
+          data-validation-for="email"
+          data-validation-type="required"
+          >'Email' field is required</span
+        >
+        <div>Your password</div>
+        <input name="password" type="password" />
+        <span
+          class="error hidden"
+          data-validation
+          data-validation-for="password"
+          data-validation-type="required"
+          >'Your password' field is required</span
+        >
+        <div>Repeat password</div>
+        <input name="password2" type="password" />
+        <span
+          class="error hidden"
+          data-validation
+          data-validation-for="password2"
+          data-validation-type="required"
+          >'Repeat password' field is required<br
+        /></span>
+
+        <span
+          class="error hidden"
+          data-validation
+          data-validation-for="password,password2"
+          data-validation-type="password"
+          >Passwords do not match.</span
+        >
+        <br />
+        <br />
+        <button type="submit">Register</button>
+      </form>
+      <h1 data-title-for="message-form">Send a message</h1>
+      <form novalidate class="message-form" method="post" action="https://google.com">
+        <div>From</div>
+        <input name="from" type="text" />
+        <span
+          class="error hidden"
+          data-validation
+          data-validation-for="from"
+          data-validation-type="required"
+          >'From' field is reuired</span
+        >
+        <div>To</div>
+        <select name="to">
+          <option></option>
+          <option value="1">Proposal</option>
+          <option value="2">Question</option>
+          <option value="3">Issue</option>
+        </select>
+        <span
+          class="error hidden"
+          data-validation
+          data-validation-for="to"
+          data-validation-type="select"
+          >Please choose a value</span
+        >
+
+        <div>Message:</div>
+        <label>
+          <textarea name="message" class="message"></textarea>
+          <span
+            class="error hidden"
+            data-validation
+            data-validation-for="message"
+            data-validation-type="required"
+            >Message field is required</span
+          >
+        </label>
+        <br />
+        <button type="submit">Send</button>
+      </form>
+    </div>
+    <script type="module" src="./modules/main.js"></script>
+    <script type="module" src="./modules/reddit.js"></script>
+<!--    <script src="../../dist/index.min.js"></script>-->
+  </body>
+</html>
