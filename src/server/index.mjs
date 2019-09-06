@@ -45,11 +45,12 @@ const server = http.createServer(async (req, res) => {
         }
         case /\/all/g.test(req.url) && req.method === 'GET': {
             try {
-                const posts = await getAllPostsAsync();
-                console.log(posts.next());
+                for await(let post of getAllPostsAsync()) {
+                    console.log(post.title);
+                }
                 res.statusCode = 200;
                 res.setHeader('Content-Type', 'application/json');
-                res.end(JSON.stringify(posts.next()));
+                res.end();
             } catch(err) {
                 console.error(err);
                 res.statusCode = 500;
